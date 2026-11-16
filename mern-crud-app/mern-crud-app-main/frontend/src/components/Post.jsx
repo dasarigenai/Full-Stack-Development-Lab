@@ -1,14 +1,15 @@
 import { useNavigate } from "react-router-dom";
+import API_URL from "../api";
 
 function Post({ post }) {
   const navigate = useNavigate();
-  
+
   const handleEdit = () => {
     navigate(`/update-post/${post._id}`);
   };
 
   const handleDelete = async () => {
-    await fetch(`http://localhost:3000/api/v1/posts/${post._id}`, {
+    await fetch(`${API_URL}/api/v1/posts/${post._id}`, {
       method: "DELETE",
     });
     window.location.reload();

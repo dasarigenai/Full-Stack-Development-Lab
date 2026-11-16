@@ -1,3 +1,4 @@
+import API_URL from "../api";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -26,7 +27,7 @@ function AddEditForm() {
     const method = id ? "PUT" : "POST";
     const url = id
       ? `${API_URL}/api/v1/posts/${id}`
-      : "${API_URL}/api/v1/posts";
+      : `${API_URL}/api/v1/posts`;
     await fetch(url, {
       method,
       headers: {
